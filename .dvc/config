@@ -1,0 +1,4 @@
+[core]
+    remote = local
+['remote "local"']
+    url = C:/Users/A S U S/dvc-storage
