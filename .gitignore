@@ -21,3 +21,9 @@ mlruns/
 # IDE
 .vscode/
 .idea/
+# Practical 6 - MLflow generated files
+.venv-mlflow/
+mlruns/
+mlartifacts/
+mlflow.db
+mlflow_outputs/
