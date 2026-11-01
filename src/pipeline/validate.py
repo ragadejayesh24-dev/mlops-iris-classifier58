@@ -1,4 +1,4 @@
-# src/pipeline/validate.py
+
 """
 Stage 4: Data Validation.
 Schema and statistical checks that must pass before data can
@@ -58,9 +58,13 @@ def validate(input_path: str) -> pd.DataFrame:
     missing_cols = EXPECTED_COLUMNS - set(df.columns)
 
     if missing_cols:
-        errors.append(
+        raise DataValidationError(
             f"Missing expected columns: {missing_cols}"
         )
+
+    # Check empty data
+    if df.empty:
+        raise DataValidationError("Dataset is empty")
 
     # Check null values
     if df.isnull().any().any():
@@ -132,7 +136,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     try:
-
         validate(args.input)
 
     except DataValidationError as e:

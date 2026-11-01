@@ -27,3 +27,8 @@ mlruns/
 mlartifacts/
 mlflow.db
 mlflow_outputs/
+# Practical 8 - Pytest and coverage reports
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
