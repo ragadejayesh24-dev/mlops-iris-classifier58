@@ -117,3 +117,6 @@ def test_model_prediction_count(model_data):
     predictions = model.predict(X)
 
     assert len(predictions) == len(X)
+def test_ci_failure_demo():
+    """Temporary test to demonstrate CI failure."""
+    assert 1 == 0
